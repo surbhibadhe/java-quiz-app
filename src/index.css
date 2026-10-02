@@ -1,4 +1,4 @@
-/* :root {
+:root {
   --ink: #16161a;
   --muted: #6d6d76;
   --line: #e0e0e6;
@@ -74,4 +74,4 @@ footer strong { color: var(--ink); font-weight: 600; }
   .grid { grid-template-columns: 1fr; }
   .panel { padding: 32px 18px; }
 }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } } */
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
