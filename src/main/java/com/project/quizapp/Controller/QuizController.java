@@ -22,6 +22,11 @@ public class QuizController {
         return quizService.createQuiz(category, numQ, title);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteQuiz(@PathVariable Integer id) {
+        return quizService.deleteQuizById(id);
+    }
+
     @GetMapping("/get/{id}")
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id) {
         return quizService.getQuizQuestions(id);

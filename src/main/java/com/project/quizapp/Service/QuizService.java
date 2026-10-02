@@ -34,6 +34,11 @@ public class QuizService {
         return new ResponseEntity<>("Success", HttpStatus.OK);
     }
 
+    public ResponseEntity<String> deleteQuizById(Integer id) {
+        quizDao.deleteById(id);
+        return new ResponseEntity<>("Quiz with id " + id + " was deleted successfully", HttpStatus.OK);
+    }
+
 
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(Integer id) {
 
@@ -49,6 +54,8 @@ public class QuizService {
         return new ResponseEntity<>(questionForUsers, HttpStatus.OK);
     }
 
+
+
     public ResponseEntity<Integer> calculateResult(Integer id, List<Response> responses) {
         Quiz quiz = quizDao.findById(id).get();
         List<Question> questions = quiz.getQuestions();
@@ -63,4 +70,6 @@ public class QuizService {
         }
         return new ResponseEntity<>(right, HttpStatus.OK);
     }
+
+
 }
